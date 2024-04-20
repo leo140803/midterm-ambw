@@ -35,7 +35,7 @@ class MyDetailCard
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 7, 0),
       child: Container(
-        width: 200, // Lebar container dinamis
+        width: 200,
         child: Card(
           color: Colors.white,
           surfaceTintColor: Colors.white,

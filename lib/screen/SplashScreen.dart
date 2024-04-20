@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: child,
         );
       },
-      transitionDuration: const Duration(milliseconds: 500), // Duration can be adjusted
+      transitionDuration: const Duration(milliseconds: 500),
     );
   }
 

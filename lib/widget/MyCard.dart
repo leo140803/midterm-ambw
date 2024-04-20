@@ -24,7 +24,7 @@ class MyCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 7, 0),
       child: Container(
-        width: containerWidth, // Lebar container dinamis
+        width: containerWidth,
         child: Card(
           color: Colors.white,
           surfaceTintColor: Colors.white,
