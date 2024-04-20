@@ -1,0 +1,30 @@
+name: uts_flutter
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/tomyum.webp
+  - assets/restaurants/kfc.jpeg
+  - assets/restaurants/greek.jpeg
+  - assets/restaurants/mcd.jpg
+  - assets/restaurants/innout.jpeg
+  - assets/meal/french_fries.jpeg
+  - assets/meal/fried_chicken.webp
+  - assets/meal/sandwich.jpeg
+  - assets/meal/burger.jpeg
+
