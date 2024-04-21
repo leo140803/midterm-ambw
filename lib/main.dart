@@ -120,6 +120,7 @@ class MyApp extends StatelessWidget {
               data: meals
             )),
       },
+      debugShowCheckedModeBanner: false,
       home: const SplashScreen()
     );
   }
