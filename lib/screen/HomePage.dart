@@ -156,12 +156,12 @@ class HomePage extends StatelessWidget {
           SliverAppBar(
             floating: true,
             snap: true,
-            expandedHeight: 90,
+            expandedHeight: 80,
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
-                padding: EdgeInsets.all(8),
+                padding: EdgeInsets.fromLTRB(1, 5, 1, 0),
                 child: SearchField(),
               ),
             ),
