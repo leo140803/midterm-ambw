@@ -56,7 +56,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
       onTap: (int index) {
         if (widget.index != index) {
           if (index == 0) {
-            Navigator.pushNamed(context, '/home');
+            Navigator.of(context).popUntil((route) => route.isFirst);
           } else if (index == 1) {
             Navigator.pushNamed(context, '/discover');
           } else if (index == 2) {
