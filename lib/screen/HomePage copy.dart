@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:uts_flutter/widget/MyAppBar.dart';
 import 'package:uts_flutter/widget/MyBottomNavBar.dart';
@@ -104,6 +103,7 @@ class HomePage extends StatelessWidget {
       description: "Burger, American",
       showOverFlow: false,
     ),
+    
   ];
 
   static const List<Widget> meals = [
@@ -142,74 +142,55 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
-        
         child: MyAppBar(
           title: title,
           disable: disable,
         ),
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            floating: true,
-            snap: true,
-            expandedHeight: 90,
-            backgroundColor: Colors.white,
-            surfaceTintColor: Colors.white,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Padding(
-                padding: EdgeInsets.all(8),
-                child: SearchField(),
-              ),
+      body: ListView(
+        children: const <Widget>[
+          SearchField(),
+          StaticCarousel(
+            title: "Thai Style",
+            image: "assets/tomyum.webp",
+            place: 12,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SubMenu(
+                  title: "Most Popular",
+                  route: '/detailPopular',
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [...restaurant],
+                  ),
+                ),
+                SizedBox(height: 20,),
+                SubMenu(
+                  title: "Meal Deals",
+                  route: '/detailMeal',
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [...meals],
+                  ),
+                ),
+              ],
             ),
           ),
-          SliverList(
-              delegate: SliverChildListDelegate([
-            StaticCarousel(
-              title: "Thai Style",
-              image: "assets/tomyum.webp",
-              place: 12,
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  SubMenu(
-                    title: "Most Popular",
-                    route: '/detailPopular',
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [...restaurant],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  SubMenu(
-                    title: "Meal Deals",
-                    route: '/detailMeal',
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [...meals],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ]))
         ],
       ),
       bottomNavigationBar: MyBottomNavBar(
         index: index,
-      )
+      ),
     );
   }
 }

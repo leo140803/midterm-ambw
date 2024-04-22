@@ -1,15 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class MyDetailCard
- extends StatelessWidget {
+class MyDetailCard extends StatelessWidget {
   final String imageAsset;
   final String name;
   final String subheading;
   final String description;
   final bool showOverFlow;
 
-  const MyDetailCard
-  ({
+  const MyDetailCard({
     super.key,
     required this.imageAsset,
     required this.name,
@@ -20,16 +20,17 @@ class MyDetailCard
 
   @override
   Widget build(BuildContext context) {
-    double height=0;
-    if(MediaQuery.of(context).size.width < 650){
-      height=250;
-    }else if(MediaQuery.of(context).size.width > 650 && MediaQuery.of(context).size.width < 800){
-      height= 210;
-    }else if(MediaQuery.of(context).size.width >= 800 && MediaQuery.of(context).size.width < 1024){
-      height= 280;
-    }
-    else{
-      height= 200;
+    double height = 0;
+    if (MediaQuery.of(context).size.width < 650) {
+      height = 250;
+    } else if (MediaQuery.of(context).size.width > 650 &&
+        MediaQuery.of(context).size.width < 800) {
+      height = 210;
+    } else if (MediaQuery.of(context).size.width >= 800 &&
+        MediaQuery.of(context).size.width < 1024) {
+      height = 280;
+    } else {
+      height = 200;
     }
 
     return Padding(
@@ -56,7 +57,9 @@ class MyDetailCard
                   children: <Widget>[
                     Text(
                       name,
-                      overflow: showOverFlow ? TextOverflow.ellipsis : TextOverflow.ellipsis,
+                      overflow: showOverFlow
+                          ? TextOverflow.clip
+                          : TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -66,13 +69,21 @@ class MyDetailCard
                       subheading,
                       style: const TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.w600),
-                      overflow: showOverFlow ? TextOverflow.ellipsis : TextOverflow.ellipsis,
+                      overflow: showOverFlow
+                          ? TextOverflow.clip
+                          : TextOverflow.ellipsis,
                     ),
-                    Text(
-                      description,
-                      style: const TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.w400),
-                      overflow: showOverFlow ? TextOverflow.ellipsis : TextOverflow.ellipsis,
+                    SizedBox(
+                      // height: 20,// Limiting height to make the area scrollable
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Text(
+                          description,
+                          overflow: TextOverflow.clip,
+                          style: const TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.w400),
+                        ),
+                      ),
                     ),
                   ],
                 ),

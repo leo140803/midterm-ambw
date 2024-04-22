@@ -27,4 +27,12 @@ flutter:
   - assets/meal/fried_chicken.webp
   - assets/meal/sandwich.jpeg
   - assets/meal/burger.jpeg
+  - assets/restaurants/starbucks.jpeg
+  - assets/restaurants/subway.jpeg
+  - assets/restaurants/beast.jpeg
+  - assets/restaurants/popeyes.jpeg
+  - assets/restaurants/raisingCane.webp
+  - assets/restaurants/burgerking.jpeg
+  - assets/restaurants/zaxby.webp
+  - assets/restaurants/tacobell.webp
 

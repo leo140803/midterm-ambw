@@ -8,6 +8,7 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+        backgroundColor: Colors.white,
         title: Text(
           title,
           textAlign: TextAlign.center,
@@ -16,6 +17,7 @@ class MyAppBar extends StatelessWidget {
             fontSize: 25,
           ),
         ),
+        surfaceTintColor: Colors.white,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_sharp,

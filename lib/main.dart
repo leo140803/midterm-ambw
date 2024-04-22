@@ -44,6 +44,62 @@ class MyApp extends StatelessWidget {
       description: "Burger, American",
       showOverFlow: true,
     ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/subway.jpeg",
+      name: "Subway Sandwich",
+      subheading: "250 King Street",
+      description: "Sandwich, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/starbucks.jpeg",
+      name: "Starbucks",
+      subheading: "100 King Street",
+      description: "Coffe, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/beast.jpeg",
+      name: "Beast Burger",
+      subheading: "300 King Street",
+      description: "Burger, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/popeyes.jpeg",
+      name: "Popeyes",
+      subheading: "500 King Street",
+      description: "Chicken Burger, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/raisingCane.webp",
+      name: "Raising Cane's",
+      subheading: "550 King Street",
+      description: "Chicken Finger, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/zaxby.webp",
+      name: "Zaxby's",
+      subheading: "550 Queen Street",
+      description: "Fried Chicken, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/tacobell.webp",
+      name: "Taco Bell",
+      subheading: "600 King Street",
+      description: "Taco, American",
+      showOverFlow: true,
+    ),
+    MyDetailCard(
+      imageAsset: "assets/restaurants/burgerking.jpeg",
+      name: "Burger King",
+      subheading: "625 King Street",
+      description: "Burger, American",
+      showOverFlow: true,
+    ),
   ];
 
   static const List <Widget> meals = [
