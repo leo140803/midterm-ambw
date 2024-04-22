@@ -74,7 +74,6 @@ class MyDetailCard extends StatelessWidget {
                           : TextOverflow.ellipsis,
                     ),
                     SizedBox(
-                      // height: 20,// Limiting height to make the area scrollable
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Text(
