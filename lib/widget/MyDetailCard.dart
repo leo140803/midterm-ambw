@@ -22,7 +22,7 @@ class MyDetailCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = 0;
     if (MediaQuery.of(context).size.width < 650) {
-      height = 250;
+      height = 230;
     } else if (MediaQuery.of(context).size.width > 650 &&
         MediaQuery.of(context).size.width < 800) {
       height = 210;
