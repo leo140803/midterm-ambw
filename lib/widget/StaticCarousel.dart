@@ -4,22 +4,27 @@ class StaticCarousel extends StatelessWidget {
   final String title;
   final String image;
   final int place;
-  const StaticCarousel(
-      {super.key, required this.title, required this.image, required this.place});
+
+  const StaticCarousel({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.place,
+  });
 
   @override
   Widget build(BuildContext context) {
-    double height= 0;
-    if(MediaQuery.of(context).size.width < 650){
-      height=300;
-    }else if(MediaQuery.of(context).size.width > 650 && MediaQuery.of(context).size.width < 800){
-      height= 600;
-    }else if(MediaQuery.of(context).size.width >= 800 && MediaQuery.of(context).size.width < 1024){
-      height= 650;
+    double height = 0;
+    if (MediaQuery.of(context).size.width < 650) {
+      height = 300;
+    } else if (MediaQuery.of(context).size.width > 650 && MediaQuery.of(context).size.width < 800) {
+      height = 600;
+    } else if (MediaQuery.of(context).size.width >= 800 && MediaQuery.of(context).size.width < 1024) {
+      height = 650;
+    } else {
+      height = 675;
     }
-    else{
-      height= 675;
-    }
+
     return SizedBox(
       height: height,
       child: Stack(
@@ -36,9 +41,9 @@ class StaticCarousel extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
+                  end: Alignment(0, 0.2), // Atur hingga 20% dari bawah ke atas
                   colors: [
-                    Colors.black.withOpacity(0.6),
+                    Colors.black.withOpacity(1), // Meningkatkan opacity
                     Colors.transparent,
                   ],
                 ),
@@ -56,7 +61,7 @@ class StaticCarousel extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     color: Colors.white,
-                    fontWeight: FontWeight.w500
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 SizedBox(
